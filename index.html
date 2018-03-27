@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<p>Translate english on klingon.</p>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+EN: <input type="text" ng-model="name"><br>
+<br>
+<div ng-bind="getString()"></div>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = 'examle';
+    $scope.getString = function() {
+    var str = $scope.name;
+    var str = str.replace( /A/i, 'ɑ');
+    str = str.replace(/b/i, 'b');
+    str = str.replace(/ch/i, 't͡ʃ');
+    str = str.replace(/e/i,'ɛ');
+    str = str.replace(/d/i,'ɖ'); 
+    str = str.replace(/gh/i,'ɣ'); 
+    str = str.replace(/h/i,'x'); 
+    str = str.replace(/i/i,'ɪ'); 
+    str = str.replace(/j/i,'d͡ʒ'); 
+    str = str.replace(/ng/i,'ŋ'); 
+    str = str.replace(/p/i,'pʰ'); 
+    str = str.replace(/q/i,'qʰ'); 
+    str = str.replace(/Q/i,'q͡χ'); 
+    str = str.replace(/s/i,'ʂ'); 
+    str = str.replace(/t/i,'tʰ'); 
+    str = str.replace(/tlh/i,'t͡ɬ'); 
+    str = str.replace(/y/i,'j'); 
+    return str;
+  }
+});
+</script>
+</body>
+</html>
